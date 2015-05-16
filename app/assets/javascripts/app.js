@@ -15,6 +15,7 @@ var bookmymove = angular.module('bookmymove',[
   'ui.select',
   'vcRecaptcha',
   'ngTable',
+  'picardy.fontawesome',
   'ui.bootstrap',
   'named-views.aboutus',
   'named-views.registration',

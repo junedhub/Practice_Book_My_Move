@@ -17,6 +17,9 @@
     "angular-datepicker": "latest",
     "angular-strap": "latest",
     "ng-table": "latest",
-    "ng-token-auth": "latest"
+    "ng-token-auth": "latest",
+    "picardy.fontawesome": "latest"
+  },
+  "resolutions": {
   }
 }
