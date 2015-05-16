@@ -1,5 +1,9 @@
 source 'https://rubygems.org'
 
+gem 'devise_token_auth'
+gem 'omniauth'
+gem 'angular_rails_csrf'
+gem 'responders'
 #Using for the font-awesome icons
 gem "font-awesome-rails"
 # Using it to create the default folder for picking up the templates for angularjs
