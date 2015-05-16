@@ -1,0 +1,247 @@
+		<div class="col-md-12">
+        	<img src="/assets/B2M.png" width="200px" height="60px">
+        	<h2 class="pull-right" style="color: #777;">Quotation</h2>
+        	<hr class="divider">
+    	</div>
+    	<div class="col-md-6">
+    		<b>Move From: </b><br>
+    		Synerzip, Kothrud, Pune, Maharashtra, India
+    		<div class="col-md-5 col-md-offset-1">
+    			<br><b>Move To: </b><br>
+    			Sarasnagar Road, Bhavani Nagar, Ahmednagar, Maharashtra, India
+    		</div><br>
+            <div class="row">
+    		    	
+            </div>
+    	</div>    
+    	<div class="col-md-4 col-md-offset-2">
+    		<h3>
+    			<span class="label label-default">
+    				Date: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{currentdate.now() | date:'MMM d, y'}}
+    			</span>
+    		</h3>
+    		<h3 style="margin-top: -9px;">
+    			<span class="label label-default">
+    				Expires: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{nextdate | date:'MMM d, y'}}
+    			</span>
+    		</h3>
+            <h3 style="margin-top: -9px;">
+                <span class="label label-default">
+                    Quotation No: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1
+                </span>
+            </h3>
+    		<h3 style="margin-left: 2px;">
+    			<md-button  md-theme="docs-dark" class="md-raised md-primary" ng-click="showAlert($event)">
+    				&nbsp;&nbsp;Approve Now <i class="fa fa-cart-arrow-down"></i>&nbsp;&nbsp;
+    			</md-button>
+    		</h3>
+    	</div>
+        <div class="row">
+            <div class="col-md-12">
+                <md-divider style="margin-top: 12px;"></md-divider>
+                <span><h3 class="pull-left">&nbsp;&nbsp;&nbsp;Quotation For Packaging of Items Only</h3></span>
+                <span>
+                    <h3 class="pull-right">No. of Pcs: 25&nbsp;&nbsp;&nbsp;</h3>
+                </span>
+                <hr class="divider" style="margin-top:70px;">
+                <div style="margin-left:110px; width:100px; font-size:17px; font-weight:bold;">Sr No.
+                </div>
+
+                <div style="margin-left:350px; margin-top:-25px; width:200px; float:left; font-size:17px; font-weight:bold; ">Particulars
+                </div>
+
+                 <div style="margin-left:700px; margin-top:-23px; width:100px; float:left; font-size:17px; font-weight:bold; ">Charges</div>
+
+                <div style="margin-left:900px; margin-top:-23px; width:100px; float:left; font-size:17px; font-weight:bold; ">Cost</div>
+
+                <hr class="divider" style="margin-top:10px;">
+            </div>
+        </div>
+
+            <div class="row">
+            <div class="col-md-12">
+                
+                <div style="margin-left:130px; width:100px; font-size:17px; font-weight:bold;">1
+                </div>
+
+                <div style="margin-left:310px; margin-top:-30px; float:left; font-size:17px; ">
+                    <b>Packing Support</b><br>
+                    <md-checkbox class="md-primary" ng-model="pm.cb1" aria-label="Checkbox 1" style="margin-top:-5px;">
+                    Packing Charges(with men and material)
+                </md-checkbox>
+                <md-checkbox ng-model="pm.cb9" md-theme="docs-dark" class="md-primary" aria-label="Checkbox 9" style="margin-top:-15px;">
+                    Unpacking Charges
+                    </md-checkbox>
+                </div>
+
+                 <div style="margin-left:700px; margin-top:-65px; width:100px; float:left; font-size:17px;">
+                Included
+                Excluded
+                </div>
+
+                <div style="margin-left:900px; margin-top:-65px; width:100px; float:left; font-size:17px;">
+                    <i class="fa fa-inr"></i>
+                    5500 /-<br>
+                    <i class="fa fa-inr"></i> 450 /-
+                </div>
+            </div>
+        </div>
+
+            <div class="row">
+            <div class="col-md-12">
+                
+                <div style="margin-left:130px; width:100px; font-size:17px; font-weight:bold;">2
+                </div>
+
+                <div style="margin-left:310px; margin-top:-20px; float:left; font-size:17px; ">
+                    <b>Handling</b><br>
+                    <md-checkbox ng-model="pm.cb3" md-theme="docs-dark" aria-label="Checkbox 1" style="margin-top:-5px;">
+                    Loading Charges(upto 1st floor)
+                </md-checkbox>
+                <md-checkbox aria-label="Checkbox 1" style="margin-top:-15px;">
+                    Unloading Charges(upto G.Floor)
+                    </md-checkbox>
+                </div>
+
+                <div style="margin-left:700px; margin-top:-65px; width:100px; float:left; font-size:17px;">
+                Included
+                Included
+                </div>
+
+                <div style="margin-left:900px; margin-top:-65px; width:100px; float:left; font-size:17px;">
+                    <i class="fa fa-inr"></i>
+                    1750 /-<br>
+                    <i class="fa fa-inr"></i> 1750 /-
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                
+                <div style="margin-left:130px; width:100px; font-size:17px; font-weight:bold;">3
+                </div>
+
+                <div style="margin-left:310px; margin-top:-30px; float:left; font-size:17px; ">
+                    <b>Freight</b><br>
+                    i)Transit charges for HHG Goods<br>
+                    ii)Transit Charges for car<br>
+                    iii)Transit Insurance
+                </div>
+
+                 <div style="margin-left:700px; margin-top:-75px; width:100px; float:left; font-size:17px;">
+                Included
+                Included
+                Included
+                </div>
+                <div style="margin-left:900px; margin-top:-65px; width:100px; float:left; font-size:17px;">
+                    <i class="fa fa-inr"></i>
+                    1250 /-<br>
+                    <i class="fa fa-inr"></i> 2250 /-
+                    <br>
+                    <i class="fa fa-inr"></i> 950 /-
+                </div>
+            </div>
+        </div>
+
+<div class="row">
+            <div class="col-md-12">
+                
+                <div style="margin-left:130px; width:100px; font-size:17px; font-weight:bold;">4
+                </div>
+
+                <div style="margin-left:310px; margin-top:-20px; float:left; font-size:17px; ">
+                    <b>Surplus Charges</b><br>
+                    (Any surplus id, included: service tax,<br> goods tax, <br>
+                     toll tax,road tax)
+                    
+                </div>
+
+                 <div style="margin-left:700px; margin-top:-45px; width:100px; float:left; font-size:17px;">
+                    Included
+                </div>
+                <div style="margin-left:900px; margin-top:-65px; width:100px; float:left; font-size:17px;"><br>
+                    <i class="fa fa-inr"></i>
+                    1100 /-
+                </div>
+            </div>
+        </div>      
+
+        <div class="row">
+            <div class="col-md-12">
+                
+                <div style="margin-left:130px; width:100px; font-size:17px; font-weight:bold;">5
+                </div>
+
+                <div style="margin-left:310px; margin-top:-20px; float:left; font-size:17px; ">
+                    <b>Logistic Charges</b><br>
+                    i)Escort(with return fare)
+                    
+                </div>
+
+                 <div style="margin-left:700px; margin-top:-10px; width:100px;  font-size:17px;">
+                    Included
+                </div>
+                 <div style="margin-left:900px; margin-top:-65px; width:100px; float:left; font-size:17px;"><br>
+                    <i class="fa fa-inr"></i>
+                    500 /-
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                
+                <div style="margin-left:130px; width:100px; font-size:17px; font-weight:bold;">6
+                </div>
+
+                <div style="margin-left:310px; margin-top:-20px; float:left; font-size:17px; ">
+                    <b>Octroi Charges</b><br>   
+                </div>
+
+                 <div style="margin-left:700px; margin-top:-20px; width:100px;  font-size:17px;">
+                    Included
+                </div>
+                 <div style="margin-left:900px; margin-top:-65px; width:100px; float:left; font-size:17px;"><br><br>
+                    <i class="fa fa-inr"></i>
+                    1050 /-
+                </div>
+            </div>
+        </div>    
+
+        <hr class="divider"> 
+
+        <div class="row">
+            <div class="col-md-12">
+                <div style="margin-left:680px; margin-top:-5px; float:left; font-size:17px; ">
+                    <b>Total Amount:</b>   
+                </div>
+                 <div style="margin-left:800px; margin-top:-5px; width:100px;  font-size:17px;">
+                    <i class="fa fa-inr"></i>
+                    16100 /-
+                </div>
+                <hr class="divider" style="margin-top:10px;">
+            </div>
+        </div>   
+
+        <div class="row">
+            <div class="col-md-12">
+                <div style="margin-left:50px; margin-top:-5px; float:left; font-size:17px;">
+                    <i>*Loading & Unloading Services And Packing services displayed on this quote can be custamized by you </i>   
+                </div>
+            </div>
+        </div>
+<br><br>
+        <div class="row">
+            <div class="col-md-12">
+                <div style="margin-left:50px; margin-top:-5px; float:left; font-size:17px;">
+                    <b>Terms and Condition:</b><br>
+                    <i>1)</i>The above quotaed transportation charges are based on the prevalling rates which is valid for 4 wheelers. Beyond that transportation charges may vary.<br>
+                    <i>2)</i>The carrier and their agents shall be exempt from any loss or damage through accidents,fire,rain,collision or any other road river hazards.<br>
+                    <i>3)</i>Cost of packing ,handling and fright based on provided list of materials.<br>
+                    <i>4)</i>Extra charges will be applicable on extra items.<br>   
+                </div>
+            </div>
+        </div>                           
+
+        </div>   		

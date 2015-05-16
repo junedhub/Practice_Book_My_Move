@@ -1,0 +1,105 @@
+<div class="row" ng-init="mapService.initialize()">
+    <div class="bg_div_map">
+        <div class="col-md-7">
+            <md-content md-theme="docs-dark" class="md-padding" layout-sm="column" style="font-size:1.0em">
+
+            <div class="col-md-7">
+                <md-input-container class="md-docs-dark-theme">
+                    <label>from:</label>
+                    <input type="text" options="options2" ng-model="mapService.initial_loc" ng-autocomplete="mapService.initial_loc" ng-mouseenter="mapService.calcRoute()" ng-change="mapService.calcRoute()" Required/>
+                </md-input-container>
+            </div>
+            <div class="col-md-3">
+                <md-input-container>
+                    <label>zipcode:</label>
+                    <input placeholder="zip-code" ng-model="zipfrom" maxlength="6" minlength="6" Required/>
+                </md-input-container>
+            </div>
+            <div class="col-md-7">
+                <md-input-container>
+                    <label>to:</label>
+                    <input type="text" options="options2" ng-model="mapService.end_loc" ng-autocomplete="mapService.end_loc" ng-mouseenter="mapService.calcRoute()" ng-change="mapService.calcRoute()" required/>
+                </md-input-container>
+            </div>
+            <div class="col-md-3">
+                <md-input-container>
+                    <label>zipcode:</label>
+                    <input type="text" placeholder="zip-code" ng-model="zip" maxlength="6" minlength="6" Required/>
+                </md-input-container>
+            </div>
+            <div class="col-md-5">
+                <p class="input-group">
+                    <input type="text" class="form-control" datepicker-popup="MM/dd/yyyy" ng-model="dt | date: 'MMM d, yyyy'" is-open="opened" min-date="04/14/2015" datepicker-options="dateOptions" ng-required="true" close-text="Close" />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </p>
+            </div>
+           <br><br><br><br><br><br><br><br><br><br><br>
+      
+<label>For Source:</label>
+               <div layout layout-sm="column">
+                <md-input-container>
+        
+                    <b>can a moving truck park outside your house?</b>
+                    <section layout="row">
+                        <md-radio-group>
+                            <span><md-radio-button value="yes" class="md-primary">yes</md-radio-button></span>
+                            <md-radio-button value="no" class="md-primary">no</md-radio-button>
+                            <md-radio-button  value="dont know" class="md-primary">don't know</md-radio-button>
+                        </md-radio-group>
+                    </section>
+                </md-input-container>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                 <md-input-container>
+                    <b>will the movers have access to these?</b>
+                    <section layout="row">
+                        <span>
+                            <md-checkbox class="md-primary">lift</md-checkbox>
+                        </span>
+                        <md-checkbox class="md-primary">staircase</md-checkbox>
+                    </section>
+                    </md-input-container>
+                </div>
+
+            
+                
+<label>For Destination:</label>
+                <div layout layout-sm="column">
+                <md-input-container>
+
+                    <b>can a moving truck park outside your house?</b>
+                    <section layout="row">
+                        <md-radio-group>
+                            <span><md-radio-button value="yes" class="md-primary">yes</md-radio-button></span>
+                            <md-radio-button value="no" class="md-primary">no</md-radio-button>
+                            <md-radio-button  value="dont know" class="md-primary">don't know</md-radio-button>
+                        </md-radio-group>
+                    </section>
+                </md-input-container>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <md-input-container>
+                    <b>will the movers have access to these? </b>
+                    <section layout="row">
+                        <span>
+                            <md-checkbox class="md-primary">lift</md-checkbox>
+                        </span>
+                        <md-checkbox class="md-primary">staircase</md-checkbox>
+                    </section>
+                    </md-input-container>
+                    </div>
+                      <div layout layout-sm="column">
+                    <md-button md-theme="docs-dark"  class='md-raised md-primary'><i class="fa fa-arrow-circle-left"></i>&nbsp;&nbsp;Back</md-button>                   
+                </div>
+
+                     <md-button md-theme="docs-dark"  class='md-raised md-primary' style="margin-top:-150px; margin-left:1100px;">
+                     </i>next&nbsp;&nbsp;<i class="fa fa-arrow-circle-right"></i></md-button>
+            </md-content> 
+        </div>
+        <div class="col-md-5">
+            <div id="map-canvas"></div>
+            {{mapService.calcRoute().distance}}
+            Total Distance:<b ng-cloak> {{mapService.distance}}</b>
+        </div>    
+    </div>
+</div>

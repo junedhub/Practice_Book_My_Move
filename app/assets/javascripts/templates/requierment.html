@@ -1,0 +1,28 @@
+<div class="row">
+	<div class="col-md-12">
+		<div class="bg_div_feedback">
+			<md-toolbar md-theme="docs-dark">
+				<h1 class="md-toolbar-tools" style="margin-left:400px;">All Requierments</h1>
+			</md-toolbar>
+
+			<div class="col-md-12 col-md-offset-0">
+				<md-card>
+					<md-card-content>
+						<table ng-table="tableParams" class="table table-bordered" show-filter="true">
+
+        					<tr ng-repeat="user in $data">
+            					<td style="vertical-align:middle" align="center"  data-title="'Client Name'">{{user.fclient}}</td>
+            					<td align="center"  data-title="'From Address'" filter="{ 'fadd': 'text' }">{{user.fadd}}</td>
+            					<td align="center"  data-title="'To Address'" filter="{ 'tadd': 'text' }">{{user.tadd}}</td>
+            					
+            					<td class="rowTd" align="center"><md-button md-theme="docs-dark"  class='md-raised md-primary'>View Item Summary</md-button>
+            					</td>
+        					</tr>
+        				</table>
+
+					</md-card-content>
+				</md-card>
+			</div>	
+		</div>
+	</div>
+</div>

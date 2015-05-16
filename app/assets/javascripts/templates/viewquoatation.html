@@ -1,0 +1,37 @@
+<div class="container">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="bg_div">
+				<md-toolbar md-theme="docs-dark">
+					<h1 class="md-toolbar-tools">Quotation List</h1>
+				</md-toolbar>
+				<accordion close-others="oneAtATime">
+    				<accordion-group>
+    					<accordion-heading>
+            				Quotation#: 1 From Packer & Movers<i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
+        				</accordion-heading>
+      					<div ui-view="quotation"></div>
+    				</accordion-group>
+    				<accordion-group>
+    					<accordion-heading>
+            				Quotation#: 2 From Movers <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
+        				</accordion-heading>
+      					<div ui-view="quotation"></div>
+    				</accordion-group>
+    				<accordion-group>
+    					<accordion-heading>
+            				Quotation#: 3 From Packer & Movers <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
+        				</accordion-heading>
+      					<div ui-view="quotation"></div>
+    				</accordion-group>
+    				<accordion-group>
+    					<accordion-heading>
+            				Quotation#: 4 From Mover <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
+        				</accordion-heading>
+      					<div ui-view="quotation"></div>
+      				</accordion-group>	
+				</accordion>
+			</div>	
+		</div>
+	</div>
+</div>	

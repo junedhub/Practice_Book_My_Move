@@ -1,0 +1,21 @@
+{
+  "name": "dsl-generated dependencies",
+  "dependencies": {
+    "bootstrap": "latest",
+    "angular": "latest",
+    "angular-route": "latest",
+    "angular-material": "0.8.3",
+    "angular-ui-date": "latest",
+    "angular-ui-map": "latest",
+    "angular-ui-bootstrap": "latest",
+    "angular-pickadate": "latest",
+    "angular-messages": "latest",
+    "angular-resource": "latest",
+    "angular-ui-router": "latest",
+    "angular-ui-select": "latest",
+    "angular-recaptcha": "latest",
+    "angular-datepicker": "latest",
+    "angular-strap": "latest",
+    "ng-table": "latest"
+  }
+}

@@ -1,0 +1,48 @@
+<div class="row">
+<!-- + Background Div -->
+    <div class="bg_div_additem">
+      <!-- + Registration Form Heading -->
+      <md-toolbar md-theme="docs-dark" class="md-primary">
+        <h1 class="md-toolbar-tools" style="margin-left:400px;">
+          Add New Item
+        </h1>
+      </md-toolbar>
+      <div class="col-md-6 add-item col-md-offset-3">
+        <md-card>
+          <md-card-content>
+            <md-content>
+              <form name="projectForm">
+                  <div layout layout-sm="column">
+                    <md-input-container>
+                      <label>Sub Category</label>
+                      <input  required name="fname" ng-model="project.description">
+                    </md-input-container>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <md-input-container>
+                      <label>Item Name</label>
+                      <input required name="lname" ng-model="project.clientName">
+                    </md-input-container>
+              </div>
+              <div layout layout-sm="column">
+                  <md-input-container>
+                      <label>Item Description:</label>
+                            <input type="text" placeholder="zip-code" ng-model="zipto" Required/>
+                        </md-input-container>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <md-content md-theme="docs-dark">
+                      Item Image:<br><md-button class="md-primary">Choose File</md-button>
+                      <span>No File Choosen</span>
+                  </md-content>
+                </div><br>
+                <md-content md-theme="docs-dark" >
+                  <section layout="row" class="create-btn">
+                      <md-button class="md-raised md-primary">Create Item</md-button>
+                  </section>
+                </md-content>
+              </form>
+            </md-content>
+          </md-card-content>
+        </md-card>          
+    </div> 
+  </div><!-- +End Of Background Div -->
+</div><!-- +End Of Main Div(row) -->

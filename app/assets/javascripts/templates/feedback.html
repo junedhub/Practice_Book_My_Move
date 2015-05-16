@@ -1,0 +1,90 @@
+<div class="section section-breadcrumbs">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h1>Book My Move Survey</h1>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+	<div class="col-md-12">
+		<div class="bg_div_feedback">
+			<md-toolbar md-theme="docs-dark">
+				<h1 class="md-toolbar-tools" style="margin-left:400px;">Customer Satisfaction</h1>
+			</md-toolbar>
+			<div class="col-md-12 col-md-offset-0">
+				<p>Dear Mahaveer Mutta,</p>
+				<p>We would like to know more about your moving experience with us. We have a small set of some quick questions and request for about 5 Minutes of your time to share your valuable feedback with us.</p>
+				<p><b>With respect to your last move containing:</b><br>
+		    	<b>From:</b> Synerzip Softech, Kothrud, Pune, Maharashtra, India.</p><p><b>To: </b>Sarasnagar Road, Bhavani Nagar, Ahmednagar, Maharashtra, India.</p>
+				<p>Please provide a rating on the following parameters:</p>
+				<md-card>
+					<md-card-content>
+						<table class="table table-bordered">
+							
+							<thead bgcolor="#4DB6AC" style="color:#fff">
+								<tr>
+									<th></th> 
+									<th>Parameter</th>
+									<th align="center">1</th>
+									<th align="center">2</th>
+									<th align="center">3</th>
+									<th align="center">4</th>
+									<th align="center">5</th>
+								</tr>
+							</thead>
+							<tbody>	
+								<tr>
+									<td align="center" style="vertical-align:middle">1</td>
+									<td style="vertical-align:middle">Ease of finding the exact packers & movers you were looking for</td>
+									<td align="center" ng-repeat="r in ratings">
+										<input type="radio" ng-model="group1" name="rating1" value="Difficult"/><br>{{r.rating}}
+							    	</td>
+								</tr>
+								
+								
+								<tr>
+									<td  align="center" style="vertical-align:middle">2</td>
+									<td style="vertical-align:middle">How was the condition of your items after delivery?</td>
+									<td align="center" ng-repeat="r in ratings1">
+										<input type="radio" ng-model="group2" name="rating10" value="{{r.rating}}"/><br>{{r.rating}}
+							    	</td>
+								</tr>
+								<tr>
+									<td  align="center" style="vertical-align:middle">3</td>
+									<td style="vertical-align:middle">How would you rate your Overall Experience ?</td>
+									<td align="center" ng-repeat="r in ratings1">
+										<input type="radio" ng-model="group2" name="rating11" value="{{r.rating}}"/><br>{{r.rating}}
+							    	</td>
+								</tr>
+								<tr>
+									<td align="center" style="vertical-align:middle">4</td>
+									<td style="vertical-align:middle">Would you recommend this vendor?</td>
+									<td align="center" ng-repeat="r in ratings2">
+										<input type="radio" ng-model="group2" name="rating12" value="{{r.rating}}"/><br>{{r.rating}}
+							    	</td>
+								</tr>
+								<tr>
+									<td align="center" style="vertical-align:middle" align="center">5</td>
+									<td style="vertical-align:middle">Will you move again with BookMyMove ? </td>
+									<td align="center" ng-repeat="r in ratings2">
+										<input type="radio" ng-model="group2" name="rating13" value="{{r.rating}}"/><br>{{r.rating}}
+							    	</td>
+								</tr>
+							</tbody>	
+						</table>
+						<md-content md-theme="docs-dark" style="font-size:1.1em">
+							<md-input-container>
+								<label>Any other feedback?</label>
+								<textarea></textarea>
+							</md-input-container>
+							<md-button class="md-raised" ng-click="showSimpleToast();">Submit <i class="fa fa-share-square"></i>
+							</md-button>
+						</md-content>	
+					</md-card-content>
+				</md-card>
+			</div>	
+		</div>
+	</div>
+</div>

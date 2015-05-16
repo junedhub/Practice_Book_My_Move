@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html ng-app="bookmymove">
+  <head>
+    <title>Book My Move</title>
+    
+    <script src='//maps.googleapis.com/maps/api/js?sensor=false&libraries=places'></script>
+    <script src="https://www.google.com/recaptcha/api.js?onload=vcRecaptchaApiLoaded&render=explicit" async defer></script>
+  </head>
+  	<body class='bg_image'>
+	<!-- navigation bar inject i.e header -->
+	<div class="mainmenu-wrapper" ui-view="header"></div>
+	<!-- main content injected in the below div -->
+	<div class="main-view-container bg_image" ui-view="content"></div>
+	<footer>
+		<!-- footer injected -->
+		<div class='container' ui-view="footer"></div>
+	</footer> 
+  </body>
+</html>

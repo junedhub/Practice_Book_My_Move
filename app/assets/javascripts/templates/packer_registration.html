@@ -1,0 +1,131 @@
+<!--+ Header(BreadCrumbs)-->
+<div class="section section-breadcrumbs">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h1>Please Register To BOOK YOUR MOVE</h1>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <div class="row">
+
+    <div class="bg_div_packer-regi">
+      <!-- + Registration Form Heading -->
+  <md-toolbar md-theme="docs-dark" class="md-primary">
+    <h1 class="md-toolbar-tools heading">
+    Packer Registration Form
+    </h1>
+  </md-toolbar><!-- + End Of Registration Form heading -->
+<!-- + Sepration Div(Registration Form) -->
+   <div class="col-md-12 ">
+  <md-card>
+  <md-card-content>
+
+  
+  <md-content class="md-padding packerregi">
+   
+      <form name="PackerForm">
+
+       <div layout layout-sm="column">
+        <md-input-container>
+          <label>Company Name</label>
+          <input input="text" name="fname" ng-model="firstname" >      
+        </md-input-container>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <md-input-container>
+          <label>Company Address</label>
+          <input  input="text" name="comadd" ng-model="lastName">
+        </md-input-container></div>
+
+       <div layout layout-sm="column">
+        <md-input-container>
+          <label>Office No</label>
+          <input  input="text" name="offno" ng-model="lastName" >
+        </md-input-container>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+         <md-input-container>
+          <label>Lisence Photocopy:-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <md-button class="md-raised md-warn">Browse</md-button>
+          </label>
+        </md-input-container>  
+</div>
+
+
+       <div layout layout-sm="column">
+        <md-input-container>
+          <label>Packing Material Used:-</label>
+        </md-input-container>
+
+       <div class="pm_material">
+        <md-checkbox ng-model="pm.cb1" aria-label="Checkbox 1">
+          Cardbord Boxes: {{ pm.cb1 }}
+        </md-checkbox>
+        <md-checkbox ng-model="pm.cb2" aria-label="Checkbox 2">
+          Inflatable Packing Material: {{ pm.cb2 }}
+        </md-checkbox>
+        <md-checkbox ng-model="pm.cb3" aria-label="Checkbox 3">
+          Bubble Wrapping: {{ pm.cb3 }}
+        </md-checkbox>
+        <md-checkbox ng-model="pm.cb4" aria-label="Checkbox 4">
+          Foam & Thermocol: {{ pm.cb4 }}
+        </md-checkbox>
+        <md-checkbox ng-model="pm.cb5" aria-label="Checkbox 5">
+          Sacks: {{ pm.cb5 }}
+        </md-checkbox>
+       </div>
+       </div>
+
+       <div layout layout-sm="column">
+        <md-input-container>
+          <label>Loading & Unloading <br> Services:-</label>
+        </md-input-container>
+        <md-radio-group ng-model="data.group2">
+        <md-radio-button value="Yes">Yes</md-radio-button>
+        <md-radio-button value="No">No</md-radio-button>
+        </md-radio-group>
+        <md-input-container>
+         <label>Re-arranging services</label>
+        </md-input-container>
+        <md-radio-group ng-model="data.group3">
+        <md-radio-button value="Yes">Yes</md-radio-button>
+        <md-radio-button value="No">No</md-radio-button>
+        </md-radio-group></div>
+
+       <div layout layout-sm="column">
+                <md-input-container>
+                  <label>Documents For ID proof:-</label>
+                 </md-input-container>  
+                 <div class="checkbox">
+                   <md-checkbox aria-label="Yes">Pancard
+                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                   <md-button class="md-raised md-primary">Upload</md-button>
+                   </md-checkbox>
+                   <md-checkbox  aria-label="No">AdharCard
+                   &nbsp;&nbsp;&nbsp;&nbsp;
+                   <md-button class="md-raised md-primary">Upload</md-button>
+                   </md-checkbox>  
+                </div>  
+        </div>        
+       
+
+        <div layout layout-sm="column" class="packerregi_sub-reset-btn">
+          <md-button class="md-raised md-warn">Submit</md-button>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <md-button class="md-raised md-warn">Reset</md-button>
+        </div>
+    
+    </form>
+  </md-content>
+</div>
+
+</div>
+
+
+
+
+
+
+

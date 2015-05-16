@@ -1,0 +1,111 @@
+<!--+ Header(BreadCrumbs)-->
+<div class="section section-breadcrumbs">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h1>Information About BOOK YOUR MOVE</h1>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- + Registration Form -->
+  <div class="row">
+
+  <!-- + Background Div -->
+    <div class="bg_div_contact">
+
+      <div class="col-md-12">
+         <md-card>
+  <md-card-content>
+
+  <h1>DEAR FRIEND,<br>WHERE DO WE GO FROM HERE?</h1>
+
+  <div class="zee row head-bullets">
+        <div class="zee col-md-6 col-lg-6 col-sm-6 col-xs-6">
+          <div class="zee img-bullet a"></div>
+          <h4 class="no-tt">Want to email?</h4>
+          <a href="mailto:contact@boyomo.co">appsplanet.co.in</a>
+        </div>
+        <div class="zee col-md-6 col-lg-6 col-sm-6 col-xs-6">
+          <div class="zee img-bullet b"></div>
+          <h4 class="no-tt">Want to talk?</h4>
+          <a href="tel:+14235206683">423.520.MOVE</a>
+        </div>
+        
+      </div>
+
+      <div class="zee row heading">
+      <h5 class="capitalise">OUR OFFICE</h5>
+      <hr>
+    </div>
+
+    <div class="zee row office">
+      <div class="zee col-lg-4 col-md-4 office-img">
+<script type="text/javascript" src="http://www.webestools.com/google_map_gen.js?lati=18.493102&long=73.815447&zoom=20&width=675&height=400&mapType=normal&map_btn_normal=yes&map_btn_satelite=yes&map_btn_mixte=yes&map_small=yes&marqueur=yes&info_bulle="></script><br /><a href="http://www.webestools.com/google-maps-code-generator-insert-map-on-website-javascript-free-google-map-script.html">Google Maps code Generator</a>
+      </div>
+      <div class="zee col-lg-8 col-md-8 office-det">
+        <h3 style="margin-top:2px" class="no-tt">United States</h3>
+        <h5 class="no-tt">Headquarters</h5>
+        <p style="margin-top: 58px" class="no-tt">417 Spencer Terrace <br>Sunnyvale, CA 94089<br>USA</p>
+        <p><object class="mini-contact-icon call" data="img/contact.svg" type="image/svg+xml" style="margin-left: 0px" width="20" height="20"></object>  423.520.MOVE</p>
+      </div>
+    </div>
+
+    <div class="zee row heading">
+      <h5 class="capitalise">WRITE TO US</h5>
+      <hr>
+    </div>
+
+    <div class="zee row write-us ng-scope" ng-controller="ContactformCtrl">
+
+      <!-- TODO: Move this in a loader view. Start using templates -->
+      <div class="ng-hide" ng-show="status == 'loading'">
+        <div class="text-center loading"><!--
+          <img src="img/91.gif" class="loader-img"> -->
+          <h4>Please wait - Sending a email</h4>
+          <div class="demo-1">
+            <div class="bar">
+              <i class="sphere"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center loading ng-hide" ng-show="status == 'loaded'">
+        <h4>Thank you for getting in touch with us. We got your message and will contact you soon. </h4>
+      </div> 
+
+      <form class="ng-pristine ng-invalid ng-invalid-required" role="form" ng-submit="submitForm()" ng-show="status == 'fresh'">
+        <div class="zee row">
+          <div class="zee col-lg-4 col-md-4">
+            <input class="zee form-control ng-pristine ng-invalid ng-invalid-required" placeholder="your name" autofocus="" required="" ng-model="contact.name" type="text"><br>
+            <input class="zee form-control ng-pristine ng-invalid ng-invalid-required" placeholder="your email" required="" ng-model="contact.email" type="text">
+          </div>
+          <div class="zee col-lg-4 col-md-4">
+            <textarea class="zee form-control ng-pristine ng-valid" name="" id="" rows="4" placeholder="your message" ng-model="contact.message"></textarea>
+          </div>
+          <div class="zee col-lg-4 col-md-4">
+            <button class="zee form-control send btn btn-warning" type="submit">Send</button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <hr></hr>
+
+
+                 
+          </md-content>
+           </md-card>
+  </md-card-content>
+
+        </div>  
+      </div>  
+
+
+
+
+    </div><!-- + End of Background Div -->
+</div><!-- +End Registration Form -->

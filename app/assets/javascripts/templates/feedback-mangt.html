@@ -1,0 +1,37 @@
+
+<div class="row">
+	<div class="col-md-12">
+		<div class="bg_div_feedback">
+			<md-toolbar md-theme="docs-dark">
+				<h1 class="md-toolbar-tools" style="margin-left:400px;">Client Feedbacks</h1>
+			</md-toolbar>
+
+			<div class="col-md-12 col-md-offset-0">
+				<md-card>
+					<md-card-content>
+
+						<table ng-table="tableParams" class="table table-bordered" show-filter="true">
+
+                          
+        					<tr ng-repeat="user in $data" >
+                                  <td style="vertical-align:middle" align="center"  data-title="'Date'" filter="{ 'filldate': 'text' }">{{user.filldate | date: 'dd/MM/yyyy'}}</td>
+            					<td align="center" data-title="'From Client'">{{user.fclient}}</td>
+            					<td align="center" data-title="'To Vendor'">{{user.tvendor}}</td>
+            					<td align="center" data-title="'Message'">{{user.msg}}</td>
+            					<td align="center" data-title="'Ratings'">
+            						<i class="fa fa-star"></i>
+            						<i class="fa fa-star"></i>
+            						<i class="fa fa-star"></i>
+            						<i class="fa fa-star"></i>
+            						<i class="fa fa-star"></i>
+            					</td>
+            					<td align="center" class="rowTd" ><md-button md-theme="docs-dark"  class='md-raised md-primary'><i class="fa fa-user"></i>Hide</md-button></td>
+        					</tr>
+        				</table>
+
+					</md-card-content>
+				</md-card>
+			</div>	
+		</div>
+	</div>
+</div>

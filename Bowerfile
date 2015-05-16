@@ -1,0 +1,19 @@
+# A sample Bowerfile
+# Check out https://github.com/42dev/bower-rails#ruby-dsl-configuration for more options
+
+  asset 'bootstrap'
+  asset 'angular'
+  asset 'angular-route'
+  asset 'angular-material', '0.8.3'
+  asset 'angular-ui-date'
+  asset 'angular-ui-map'
+  asset 'angular-ui-bootstrap'
+  asset 'angular-pickadate'
+  asset 'angular-messages'
+  asset 'angular-resource'
+  asset 'angular-ui-router'
+  asset 'angular-ui-select'
+  asset 'angular-recaptcha'
+  asset 'angular-datepicker'
+  asset 'angular-strap'
+  asset 'ng-table'
