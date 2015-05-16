@@ -80,7 +80,8 @@ bookmymove.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', 
       }   
     });
   $authProvider.configure({
-            apiUrl: 'https://gentle-basin-9146.herokuapp.com'
+            //apiUrl: 'https://gentle-basin-9146.herokuapp.com'
+            apiUrl: 'http://localhost:3000'
         });
   $urlRouterProvider.otherwise('/');
   //$locationProvider.html5Mode(false).hashPrefix('!');

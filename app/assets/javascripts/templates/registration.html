@@ -23,16 +23,13 @@
       <div layout="column">
         <md-content md-theme="docs-dark" class="md-padding" layout="row" layout-sm="column" style="font-size:1.1em">
           <form ng-submit="handleRegBtnClick()" name="ClientForm" ng-init="registrationForm = {}">
-
-          <div ui-view="form"></div>
-<button type="submit" class="md-raised md-primary">Register</button>
+            <div ui-view="form"></div>
+            <div layout layout-sm="column" class="sub-reset-btn">
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <md-button type="submit" md-theme="docs-dark" class="md-raised md-primary">Register <i class="fa fa-paper-plane fa-1x"></i></md-button>
+            </div>
           </form>
         </md-content>
-      </div>
-      <div layout layout-sm="column" class="sub-reset-btn">
-        <md-button ng-if="uistate.current.name !== 'home.registration'" type="submit" md-theme="docs-dark" ui-sref="home.regi-packer1" class="md-raised md-primary"><i class="fa fa-arrow-circle-left fa-1x"></i> Back</md-button>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <md-button md-theme="docs-dark" class="md-raised md-primary">Next <i class="fa fa-arrow-circle-right fa-1x"></i></md-button>
       </div>
     </div>
     <!-- Second Sepration Div(Login Form) -->

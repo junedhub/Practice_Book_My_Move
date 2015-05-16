@@ -5,7 +5,7 @@ gem 'omniauth'
 gem 'angular_rails_csrf'
 gem 'responders'
 #Using for the font-awesome icons
-#gem "font-awesome-rails"
+gem "font-awesome-rails"
 # Using it to create the default folder for picking up the templates for angularjs
 gem 'angular-rails-templates'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
