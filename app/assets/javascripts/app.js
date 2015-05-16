@@ -79,7 +79,7 @@ bookmymove.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', 
       }   
     });
   $authProvider.configure({
-            apiUrl: 'http://localhost:3000/'
+            apiUrl: 'https://localhost:3000'
         });
   $urlRouterProvider.otherwise('/');
   //$locationProvider.html5Mode(false).hashPrefix('!');
