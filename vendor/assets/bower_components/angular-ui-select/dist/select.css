@@ -125,7 +125,7 @@ body > .select2-container.open {
   height: auto;
   max-height: 200px;
   overflow-x: hidden;
-  margin-top: -1px;
+  margin-top: -26px;
 }
 
 body > .ui-select-bootstrap.open {
@@ -199,7 +199,7 @@ body > .ui-select-bootstrap.open {
     color: #fff;
     text-decoration: none;
     outline: 0;
-    background-color: #428bca;
+    background-color: #009688;
 }
 
 .ui-select-bootstrap .ui-select-choices-row.disabled>a,
