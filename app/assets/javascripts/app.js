@@ -4,6 +4,7 @@ var bookmymove = angular.module('bookmymove',[
 	'ngMaterial',
   'ngAria',
   'ngAnimate',
+  'ng-token-auth',
 	'ngAutocomplete',
   'ui.date',
   'ui.map',
@@ -250,7 +251,7 @@ if ($state.current.name !== 'home.registration') {
   $scope.headingTop = 'Please Register Here To Starting Booking With Us';
 };
 $scope.vendor = '';
-//console.log('userType: '+ $scope.userType);
+console.log('userType: '+ $scope.userType);
 $scope.vendors = [
   {name: 'Packer'},
   {name: 'Mover'},
