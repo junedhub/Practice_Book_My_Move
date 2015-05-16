@@ -16,10 +16,10 @@
 #
 default: &default
   adapter: postgresql
-  encoding: utf8
-  username: postgres
-  password: root
-  host: localhost
+  host: ec2-23-21-76-246.compute-1.amazonaws.com
+  username: fujwohcmnwgdad
+  password: FqtRPLBn30nULNj-jY88-y8w71
+  sslmode: require
   # For details on connection pooling, see rails configuration guide
   # http://guides.rubyonrails.org/configuring.html#database-pooling
   pool: 5
@@ -82,9 +82,5 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 production:
-  adapter: postgresql
+  <<: *default
   database: d536kmj672jj2d
-  host: ec2-23-21-76-246.compute-1.amazonaws.com
-  username: fujwohcmnwgdad
-  password: FqtRPLBn30nULNj-jY88-y8w71
-  sslmode: require
