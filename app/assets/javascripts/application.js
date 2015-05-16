@@ -27,5 +27,7 @@
 //= require angular-ui-router
 //= require bootstrap/dist/js/bootstrap.js
 //= require ng-table/dist/ng-table
+//= require angular-cookie/angular-cookie
+//= requie ng-token-auth/dist/ng-token-auth
 //= require angular-recaptcha/release/angular-recaptcha
 //= require_tree .

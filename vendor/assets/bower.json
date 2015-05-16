@@ -16,6 +16,7 @@
     "angular-recaptcha": "latest",
     "angular-datepicker": "latest",
     "angular-strap": "latest",
-    "ng-table": "latest"
+    "ng-table": "latest",
+    "ng-token-auth": "latest"
   }
 }
