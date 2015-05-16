@@ -82,7 +82,10 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 production:
-  <<: *default
-  database: receta_production
-  username: receta
-  password: <%= ENV['RECETA_DATABASE_PASSWORD'] %>
+  adapter: postgresql
+  database: d536kmj672jj2d
+  host: ec2-23-21-76-246.compute-1.amazonaws.com
+  username: fujwohcmnwgdad
+  password: FqtRPLBn30nULNj-jY88-y8w71
+  sslmode: require
+  port=5432
