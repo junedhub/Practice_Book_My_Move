@@ -63,7 +63,7 @@ var bookmymove = angular.module('bookmymove',[
   'named-views.regi-packer1',
   'named-views.viewquotation'
 ]);
-bookmymove.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', '$mdThemingProvider', function($stateProvider, $urlRouterProvider, $locationProvider,$mdThemingProvider){
+bookmymove.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', '$mdThemingProvider', '$authProvider', function($stateProvider, $urlRouterProvider, $locationProvider,$mdThemingProvider,$authProvider){
 	$stateProvider.state('home',{
       url: '/',
       views: {
@@ -77,8 +77,10 @@ bookmymove.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', 
           templateUrl: 'footer.html'
         }
       }   
-    })
-  ;
+    });
+  $authProvider.configure({
+            apiUrl: 'http://localhost:3000/'
+        });
   $urlRouterProvider.otherwise('/');
   //$locationProvider.html5Mode(false).hashPrefix('!');
   $mdThemingProvider.theme('docs-dark', 'default')
@@ -228,8 +230,8 @@ bookmymove.controller('viewQuotationCtrl',['$scope',function($scope){
 }]);
 
 
-bookmymove.controller('RegistrationCtrl', ['$scope','$state', function($scope,$state){
-console.log($state.current.name);
+bookmymove.controller('RegistrationCtrl', ['$scope','$state','$auth', function($scope,$state,$auth){
+//console.log($state.current.name);
 $scope.uistate = $state;
 $scope.firstName = '';
 $scope.lastName = '';
@@ -242,6 +244,16 @@ $scope.password = '';
 $scope.confirmpassword = '';
 $scope.companyname= '';
 $scope.state = {};
+
+$scope.handleRegBtnClick = function() {
+      $auth.submitRegistration($scope.registrationForm)
+        .then(function(resp) { 
+          // handle success response
+        })
+        .catch(function(resp) { 
+          // handle error response
+        });
+    };
 
 if ($state.current.name !== 'home.registration') {
   $scope.userType = 'vendor';
