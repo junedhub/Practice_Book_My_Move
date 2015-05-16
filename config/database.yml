@@ -88,4 +88,3 @@ production:
   username: fujwohcmnwgdad
   password: FqtRPLBn30nULNj-jY88-y8w71
   sslmode: require
-  port=5432
