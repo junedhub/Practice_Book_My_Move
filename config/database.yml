@@ -24,6 +24,13 @@ default: &default
   # http://guides.rubyonrails.org/configuring.html#database-pooling
   pool: 5
 
+#default: &default
+#  adapter: postgresql
+#  host: localhost
+#  username: postgres
+#  password: root
+#  pool: 5
+
 development:
   <<: *default
   database: receta_development

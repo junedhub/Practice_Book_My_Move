@@ -11,19 +11,23 @@
   			<md-card>
   				<md-card-content style="background-color:black;">
   					<md-content>
-    					<form name="projectForm" style="background-color:black;">
+    					<form novalidate name="LoginForm" ng-submit="loginSubmit()" style="background-color:black;" ng-init="loginForm = {}">
     						<div class="input-group">
   								<span class="input-group-addon" id="basic-addon1"><i class="fa fa-user"></i></span>
-  								<input type="text" class="form-control" placeholder="Enter Username" aria-describedby="basic-addon1">
-							</div><br>
-							<div class="input-group">
+  								<input type="email" name="emailid" class="form-control" placeholder="Enter Username" aria-describedby="basic-addon1" ng-model="loginForm.email" ng-model-options="{debounce: 750}" validate-email required>
+							 </div>
+               <div style="color: #red;" ng-show="!LoginForm.emailid.$pristine" ng-messages="LoginForm.emailid.$error" ng-messages-include="my-messages.html">
+                  <div ng-message="email">Specify a valid email<i class="fa fa-exclamation-triangle fa-stack-1x"></i></div>
+                </div><br>
+							 <div class="input-group">
   								<span class="input-group-addon" id="basic-addon1"><i class="fa fa-lock"></i></span>
-  								<input type="text" class="form-control" placeholder="Enter Password" aria-describedby="basic-addon1">
-							</div><br>
-              <a Style="color:white;">Forget Password?</a>
-							<section layout="row" class="create-btn">
-                      			<h2><md-button md-theme="docs-dark" class="md-raised md-primary">&nbsp;&nbsp;<i class="fa fa-sign-in"></i> Login&nbsp;&nbsp;</md-button></h2>
-                  			</section>
+  								<input type="password" required class="form-control" ng-model="loginForm.password"  ng-model-options="{debounce: 750}" placeholder="Enter Password" aria-describedby="basic-addon1">
+                  <div ng-show="!LoginForm.password.$pristine" ng-messages="LoginForm.password.$error" ng-model-options="{debounce: 750}" ng-messages-include="my-messages.html"></div>
+							  </div><br>
+                <a Style="color:white;">Forget Password?</a>
+							  <section layout="row" class="create-btn">
+                  <h2><md-button type="submit" md-theme="docs-dark" class="md-raised md-primary">&nbsp;&nbsp;<i class="fa fa-sign-in"></i> Login&nbsp;&nbsp;</md-button></h2>
+                </section>
     					</form>
     				</md-content>
     			</md-card-content>
@@ -31,5 +35,5 @@
 		</div> 
 	</div><!-- +End Of Background Div -->
 </div><!-- +End Of Main Div(row) -->
-
+<button class="btn btn-primary btn-lg" ng-click='signOut()'>Sign out</button>
 

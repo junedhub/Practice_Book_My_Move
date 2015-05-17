@@ -76,7 +76,11 @@ bookmymove.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', 
         'footer':{
           templateUrl: 'footer.html'
         }
-      }   
+      },resolve: {
+          auth: function($auth) {
+            return $auth.validateUser();
+          }
+        }
     }).state('vendor',{
       url: '/vendor',
       views: {
@@ -106,6 +110,21 @@ bookmymove.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', 
         'footer':{
           templateUrl: 'footer.html'
         },
+      },
+      abstract: true 
+    }).state('clientLogin',{
+      url: '/sign_in',
+      views: {
+        'header': {
+          templateUrl: 'header.html'
+        },
+        'content': {
+          templateUrl: 'loginpage.html',
+          controller: 'clientLoginCtrl'
+        },
+        'footer':{
+          templateUrl: 'footer.html'
+        },
       } 
     });
   $authProvider.configure({
@@ -118,6 +137,16 @@ bookmymove.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', 
    .primaryPalette('teal');
     $mdThemingProvider.theme('docs-darks', 'default')
    .primaryPalette('blue');
+}]);
+
+//run phase
+bookmymove.run(['$rootScope', '$state', function($rootScope,$state) {
+  $rootScope.$on('auth:login-success', function() {
+    $state.go('home');
+  });
+  $rootScope.$on('auth:session-expired', function() {
+    $state.go('clientLogin');
+  });
 }]);
 
 //service
@@ -394,6 +423,29 @@ bookmymove.controller('QuotationCtrl',['$scope', '$mdDialog', function($scope,$m
         .targetEvent(event)
     );
   };
+}]);
+
+bookmymove.controller('clientLoginCtrl',['$scope','$auth',function($scope,$auth){
+      $scope.loginSubmit = function() {
+      $auth.submitLogin($scope.loginForm)
+        .then(function(resp) { 
+          // handle success response
+          console.info('login success');
+        })
+        .catch(function(resp) { 
+          // handle error response
+        });
+    };
+    console.info($auth.validateUser);
+    $scope.logout = function() {
+      $auth.signOut()
+        .then(function(resp) { 
+          // handle success response
+        })
+        .catch(function(resp) { 
+          // handle error response
+        });
+    };
 }]);
 
 bookmymove.controller('BlacklistCtrl',['$scope', 'ngTableParams', '$filter', '$modal', function($scope,ngTableParams,$filter,$modal){

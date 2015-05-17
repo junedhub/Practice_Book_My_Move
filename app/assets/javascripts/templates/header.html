@@ -7,10 +7,11 @@
 								<a class="#" data-toggle="dropdown" href="#"><img src="assets/in.png" alt="Great Britain"> UK</a>
 								
 							</div><!--dropdown choose-country-->
-						</li>	
-			        	<li><a href="page-login.html">Login</a></li>
-			        	<li ui-sref-active="active" class="active"><a ui-sref="home.registration">SignUp</a></li>
-			        	<li ui-sref-active="active" class="active"><a ui-sref="vendor">Vendor</a></li>
+						</li>
+						<li ng-show="user.id">Welcome<a ng-click='signOut()'>{{user.fname}} Sign out</a></li>	
+			        	<li><a ng-show="!user.id" ui-sref-active="active" ui-sref="clientLogin">Login</a></li>
+			        	<li ng-show="!user.id" ui-sref-active="active" class="active"><a ui-sref="home.registration">SignUp</a></li>
+			        	<li ng-show="!user.id" ui-sref-active="active" class="active"><a ui-sref="vendor">Vendor</a></li>
 			        </ul>
 				</div><!--extras-->
 			</div><!--menuextras-->
