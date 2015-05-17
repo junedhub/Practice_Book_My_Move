@@ -23,12 +23,6 @@ default: &default
   # For details on connection pooling, see rails configuration guide
   # http://guides.rubyonrails.org/configuring.html#database-pooling
   pool: 5
-#default: &default
-#  adapter: postgresql
-#  host: localhost
-#  username: postgres
-#  password: root
-#  pool: 5
 
 development:
   <<: *default

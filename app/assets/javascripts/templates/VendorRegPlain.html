@@ -1,0 +1,44 @@
+<!--+ Header(BreadCrumbs)-->
+<div ng-if="uistate.current.name === 'home.registration'" class="section section-breadcrumbs">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h1>{{headingTop}}</h1>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- + Registration Form -->
+<div class="row">
+  <!-- + Background Div -->
+  <div class="bg_div_registration">
+    <center>
+    <!-- + Registration Form Heading -->
+    <md-toolbar md-theme="docs-dark">
+      <center><h1 ng-if="uistate.current.name === 'home.registration'" class="md-toolbar-tools">Registration Form</h1>
+        <div ng-if="uistate.current.name !== 'home.registration'" class="page-toppings text-center">
+          <h3>Join Hands With Book My Move</h3>  
+          <div id="status-buttons" class="text-center">
+            <a ui-sref-active="active" ui-sref="vendor"><span><b>1</b></span> Profile</a>
+            <a ui-sref-active="active" ui-sref="VendorReg.packer1"><span><b>2</b></span> Interests</a>
+            <a ui-sref-active="active" ui-sref="VendorReg.mover2"><span><b>3</b></span> Payment</a>
+          </div>
+        </div>
+      </center>
+    </md-toolbar><!-- + End Of Registration Form heading -->   
+
+    <div class="col-md-8"><!-- Sepration Div(Registration Form) -->
+     <md-card>
+      <md-card-content>      
+      <div layout="column">
+        <md-content md-theme="docs-dark" class="md-padding" layout="row" layout-sm="column" style="font-size:1.1em">
+          <form novalidate ng-submit="handleRegBtnClick()" name="ClientForm" ng-init="registrationForm = {}">
+            <div id="form-views" ui-view="vendorForm"></div>
+          </form>
+        </md-content>
+      </div>
+    </center>
+    </div>
+    <!-- Second Sepration Div(Login Form) -->
+
+

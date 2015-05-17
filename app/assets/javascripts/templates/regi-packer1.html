@@ -1,12 +1,17 @@
 <div layout layout-sm="column">
-  
-  <md-input-container>
+  <md-input-container flex>
     <label>Company Address</label>
-    <input  input="text" name="comadd" ng-model="caddress">
+    <textarea input="text" name="comadd" ng-model="caddress"></textarea>
+  </md-input-container>
+</div>
+<div layout layout-sm="column">
+  <md-input-container>
+    <label>Company Lindline</label>
+    <input type="text" ng-model="officeno">
   </md-input-container>
   <md-input-container>
-    <label>Office No</label>
-    <textarea ng-model="officeno" ></textarea>
+    <label>Company No</label>
+    <input type="text" ng-model="officeno">
   </md-input-container>
 </div>
 <div layout layout-sm="column">
@@ -14,16 +19,18 @@
     <label>Loading & Unloading <br> Services:-</label>
   </md-input-container>
   <md-radio-group ng-model="data.group2" style="margin-top:30px;">
-    <md-radio-button value="Yes">Yes</md-radio-button>
-    <md-radio-button value="No">No</md-radio-button>
+    <md-radio-button class="md-primary" value="Yes">Yes</md-radio-button>
+    <md-radio-button class="md-primary" value="No">No</md-radio-button>
   </md-radio-group>
   <md-input-container>
     <label>Re-arranging services</label>
   </md-input-container>
   <md-radio-group ng-model="data.group3" style="margin-top:30px;">
-    <md-radio-button value="Yes">Yes</md-radio-button>
-    <md-radio-button value="No">No</md-radio-button>
+    <md-radio-button class="md-primary" value="Yes">Yes</md-radio-button>
+    <md-radio-button class="md-primary" value="No">No</md-radio-button>
   </md-radio-group>
 </div>
 <br>
-        
+<div class="row">
+  <md-button class="md-raised md-primary" ui-sref="VendorReg.packer2">Next Session <i class="fa fa-arrow-circle-right"></i></md-button>
+</div>        

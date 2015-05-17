@@ -9,7 +9,7 @@
                 <input input="text" name="lastname" ng-model="registrationForm.lname" placeholder="Enter LastName" ng-model-options="{debounce: 750}" ng-required="true" minlength="3" ng-pattern="/^[a-zA-Z]{3,20}$/">
                 <div ng-show="!ClientForm.lastname.$pristine" ng-messages="ClientForm.lastname.$error" ng-messages-include="my-messages.html"></div>
               </md-input-container>
-              <md-input-container ng-if="uistate.current.name !== 'home.registration'">
+              <md-input-container ng-if="uistate.current.name === 'vendor'">
                 <label>Company Name*<i ng-show="ClientForm.cname.$valid && !ClientForm.cname.$pristine" class="fa fa-check fa-stack-1x"></i></label>
                 <input input="text" name="cname" ng-model="companyname" placeholder="Enter Company Name" ng-model-options="{debounce: 750}" ng-required="true" minlength="3" ng-pattern="/^[a-zA-Z]{3,20}$/">
                 <div ng-show="!ClientForm.cname.$pristine" ng-messages="ClientForm.cname.$error" ng-messages-include="my-messages.html"></div>
@@ -18,22 +18,22 @@
             <div layout layout-sm="column">
               <md-input-container flex>
                 <label>Email_id*<i ng-show="ClientForm.emailid.$valid && !ClientForm.emailid.$pristine" class="fa fa-check fa-stack-1x"></i></label>
-                <input type="email" required name="emailid" ng-model="registrationForm.email"  ng-model-options="{debounce: 750}" validate-email />
+                <input type="email" required name="emailid" ng-model="registrationForm.email" ng-model-options="{debounce: 750}" validate-email placeholder="Please enter a valid and unique email id" />
                 <div  ng-show="!ClientForm.emailid.$pristine" ng-messages="ClientForm.emailid.$error" ng-messages-include="my-messages.html">
                   <div ng-message="email">Specify a valid email<i class="fa fa-exclamation-triangle fa-stack-1x"></i></div>
                 </div>
               </md-input-container>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               <md-input-container flex>
-                <label>Mobile No.*<i ng-show="ClientForm.mobile.$valid && !ClientForm.mobile.$pristine" class="fa fa-check fa-stack-1x"></i></label>
+                <label>Mobile No.*<i ng-show="ClientForm.mobile.$valid && !ClientForm.mobile.$pristine" placeholder="Specify your mobile number" class="fa fa-check fa-stack-1x"></i></label>
                 <input ng-model="registrationForm.mobile" name="mobile" ui-mask="{{pattern_mob}}" required/>
                 <div  ng-show="!ClientForm.mobile.$pristine" ng-messages="ClientForm.mobile.$error" ng-messages-include="my-messages.html">
                 </div>
               </md-input-container>
             </div>
-
             <div layout layout-sm="column">  
-              <ui-select ng-model="registrationForm.state.selected" theme="bootstrap" class="state">
-                <ui-select-match placeholder="Select state">
+              <ui-select ng-model="registrationForm.state.selected.name" theme="bootstrap" class="state">
+                <ui-select-match placeholder="Enter state">
                 {{$select.selected.name}}
                 </ui-select-match>
                 <ui-select-choices repeat="state in states | filter: $select.search">
@@ -41,8 +41,8 @@
                 </ui-select-choices>
               </ui-select>
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
-              <ui-select ng-model="registrationForm.city.selected" theme="bootstrap" class="state">
-                <ui-select-match placeholder="Select city">
+              <ui-select ng-model="city.name" theme="bootstrap" class="state">
+                <ui-select-match placeholder="Enter city">
                 {{$select.selected.name}}
                 </ui-select-match>
                 <ui-select-choices repeat="city in cities | filter: $select.search">
@@ -50,13 +50,14 @@
                 </ui-select-choices>
               </ui-select>
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              <md-input-container flex class="pincode">
+              <md-input-container class="pincode">
                 <label>Pincode*<i ng-show="ClientForm.pincode.$valid && !ClientForm.pincode.$pristine" class="fa fa-check fa-stack-1x"></i></label>
                 <input type="text" ng-model="registrationForm.pincode" name="pincode" ui-mask="{{pattern_pin}}" required />
                 <div  ng-show="!ClientForm.pincode.$pristine" ng-messages="ClientForm.pincode.$error" ng-messages-include="my-messages.html">
                 </div>
-              </md-input-container>  
-              <ui-select ng-model="vendor.selected" theme="bootstrap" class="state">
+              </md-input-container>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+              <ui-select ng-if="uistate.current.name === 'vendor'" ng-model="vendor.selected" theme="bootstrap" class="state">
                 <ui-select-match placeholder="Vendor Type...">
                 {{$select.selected.name}}
                 </ui-select-match>
@@ -65,9 +66,7 @@
                 </ui-select-choices>
               </ui-select>
             </div>
-
             <div layout layout-sm="column">
- 
               <md-input-container flex>
                 <label>Password*</label>
                 <input type="password" ng-model="registrationForm.password" name="password" minlength="6" minlength="18" required/>

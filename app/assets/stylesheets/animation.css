@@ -1,0 +1,34 @@
+[ui-view].ng-enter, [ui-view].ng-leave{
+    position: absolute;
+    left: 0;
+    right: 0;
+    -webkit-transition:all .75s ease-in;
+    transition:all .77s ease-in;
+}
+[ui-view].ng-enter{
+    opacity: 0;
+}
+[ui-view].ng-enter-active{
+    opacity: 1;
+}
+[ui-view].ng-leave{
+    opacity: 1;
+}
+[ui-view].ng-leave-active{
+    opacity: 0;
+}
+
+/* numbered buttons*/
+#status-buttons                 {  }
+#status-buttons a               { color:#FFF; display:inline-block; font-size:15px; margin-right:10px; text-align:center; text-transform:uppercase; }
+#status-buttons a:hover         { text-decoration:none; }
+#status-buttons span            { background:#080808; display:block; height:50px; margin:0 auto 10px; padding-top:14px; width:50px; 
+    border-radius:50%; }
+
+/* active buttons */
+#status-buttons a.active span   { background:#fff; color: black; }
+.page-toppings {
+  padding-bottom: 9px;
+  margin: 25px 0 20px;
+}
+

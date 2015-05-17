@@ -45,7 +45,6 @@ var bookmymove = angular.module('bookmymove',[
   'named-views.admin-profile-update',
   'named-views.complaint',
   'named-views.quotation-report',
-  'named-views.regi-packer2',
   'named-views.regi-mover1',
   'named-views.regi-mover2',
   'named-views.regi-packerNmover2',
@@ -56,7 +55,7 @@ var bookmymove = angular.module('bookmymove',[
   'named-views.deal-cancel',
   'named-views.vendorPanel',
   'named-views.requierment-report',
-  'named-views.vendor',
+  'named-views.VendorReg',
   'named-views.client-deal-cancle-report',
   'named-views.deal-cancle-report',
   'named-views.deal-report',
@@ -78,6 +77,36 @@ bookmymove.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', 
           templateUrl: 'footer.html'
         }
       }   
+    }).state('vendor',{
+      url: '/vendor',
+      views: {
+        'header': {
+          templateUrl: 'header.html'
+        },
+        'content': {
+          templateUrl: 'registration.html',
+          controller: 'RegistrationCtrl'
+        },
+        'footer':{
+          templateUrl: 'footer.html'
+        },
+        'form@vendor':{
+          templateUrl: 'registrationform.html'
+        }
+      } 
+    }).state('VendorReg',{
+      url: '/VendorReg',
+      views: {
+        'header': {
+          templateUrl: 'header.html'
+        },
+        'content': {
+          templateUrl: 'VendorRegPlain.html',
+        },
+        'footer':{
+          templateUrl: 'footer.html'
+        },
+      } 
     });
   $authProvider.configure({
             //apiUrl: 'https://gentle-basin-9146.herokuapp.com'
@@ -246,6 +275,9 @@ $scope.password = '';
 $scope.confirmpassword = '';
 $scope.companyname= '';
 $scope.state = {};
+$scope.city = {};
+
+
 
 $scope.handleRegBtnClick = function() {
       $auth.submitRegistration($scope.registrationForm)
@@ -257,20 +289,20 @@ $scope.handleRegBtnClick = function() {
         });
     };
 
-if ($state.current.name !== 'home.registration') {
+if ($state.current.name === 'Vendor') {
   $scope.userType = 'vendor';
   $scope.headingTop = 'Please Register Here With Us To Start Your Business';
 }else{
   $scope.userType = 'Client';
   $scope.headingTop = 'Please Register Here To Starting Booking With Us';
 };
-$scope.vendor = '';
-console.log('userType: '+ $scope.userType);
+$scope.vendor = {};
 $scope.vendors = [
   {name: 'Packer'},
   {name: 'Mover'},
   {name: 'Packer & Mover'}
 ];
+//console.log($scope.vendor.name);
 $scope.cities = [
     { name: 'Pune'},
     { name: 'Ahmednagar'},
@@ -338,6 +370,30 @@ $scope.cities = [
     { name: 'Nasikh' },
     { name: 'Lonvala' },
   ];
+}]);
+
+bookmymove.controller('QuotationCtrl',['$scope', '$mdDialog', function($scope,$mdDialog){
+  $scope.currentdate =  Date;
+  var myDate = new Date();
+  var nextDay = new Date(myDate);
+  nextDay.setDate(myDate.getDate()+2);
+  $scope.nextdate =  nextDay;
+  $scope.alert = '';
+  $scope.showAlert = function(event) {
+
+    // Appending dialog to document.body to cover sidenav in docs app
+    // Modal dialogs should fully cover application
+    // to prevent interaction outside of dialog
+    $mdDialog.show(
+      $mdDialog.alert()
+        .parent(angular.element(document.body))
+        .title('This is an alert title')
+        .content('You can specify some description text in here.')
+        .ariaLabel('Alert Dialog Demo')
+        .ok('Got it!')
+        .targetEvent(event)
+    );
+  };
 }]);
 
 bookmymove.controller('BlacklistCtrl',['$scope', 'ngTableParams', '$filter', '$modal', function($scope,ngTableParams,$filter,$modal){
