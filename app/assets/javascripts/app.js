@@ -21,7 +21,8 @@ var bookmymove = angular.module('bookmymove',[
   'named-views.registration',
   'named-views.map',
   'named-views.feedback',
-  'named-views.adminPanel',
+  //'named-views.adminPanel',
+  'toastr',
   'named-views.quotation',
   'named-views.vendorhomepg',
   'named-views.packerregistration',
@@ -64,6 +65,30 @@ var bookmymove = angular.module('bookmymove',[
   'named-views.viewquotation'
 ]);
 bookmymove.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', '$mdThemingProvider', '$authProvider', function($stateProvider, $urlRouterProvider, $locationProvider,$mdThemingProvider,$authProvider){
+
+$authProvider.configure([
+    {
+      default: {
+        //apiUrl: 'https://gentle-basin-9146.herokuapp.com'
+        apiUrl: 'http://localhost:3000',
+        proxyIf: function() { window.isOldIE() },
+      }  
+    }, {
+    adminUser: {
+      apiUrl:                'http://localhost:3000',
+      proxyIf:               function() { window.isOldIE() },
+      signOutUrl:            '/admin_auth/sign_out',
+      emailSignInPath:       '/admin_auth/sign_in',
+      emailRegistrationPath: '/admin_auth',
+      accountUpdatePath:     '/admin_auth',
+      accountDeletePath:     '/admin_auth',
+      passwordResetPath:     '/admin_auth/password',
+      passwordUpdatePath:    '/admin_auth/password',
+      tokenValidationPath:   '/admin_auth/validate_token',
+    }
+  }  
+]);
+
 	$stateProvider.state('home',{
       url: '/',
       views: {
@@ -76,11 +101,7 @@ bookmymove.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', 
         'footer':{
           templateUrl: 'footer.html'
         }
-      },resolve: {
-          auth: function($auth) {
-            return $auth.validateUser();
-          }
-        }
+      }
     }).state('vendor',{
       url: '/vendor',
       views: {
@@ -97,7 +118,12 @@ bookmymove.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', 
         'form@vendor':{
           templateUrl: 'registrationform.html'
         }
-      } 
+      },resolve: {
+        auth: ['$auth', function($auth) {
+          console.log($auth.validateUser());
+          return $auth.validateUser({config: adminUser});
+        }]
+      }
     }).state('VendorReg',{
       url: '/VendorReg',
       views: {
@@ -126,11 +152,30 @@ bookmymove.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', 
           templateUrl: 'footer.html'
         },
       } 
+    }).state('Admin',{
+      url: '/admin',
+      views: {
+        'content':{
+          templateUrl: 'adminreg.html',
+          controller: 'adminsdemo'
+        }
+      }
+    }).state('adminpanel',{
+      url: '/adminpanel',
+      views: {
+        'header': {
+          templateUrl: 'header.html'
+        },
+        'content':{
+          templateUrl: 'loginpage.html',
+          controller: 'adminsdemo'
+        },
+        'footer':{
+          templateUrl: 'footer.html'
+        }
+      }
     });
-  $authProvider.configure({
-            apiUrl: 'https://gentle-basin-9146.herokuapp.com'
-            //apiUrl: 'http://localhost:3000'
-        });
+
   $urlRouterProvider.otherwise('/');
   //$locationProvider.html5Mode(false).hashPrefix('!');
   $mdThemingProvider.theme('docs-dark', 'default')
@@ -145,6 +190,9 @@ bookmymove.run(['$rootScope', '$state', function($rootScope,$state) {
     $state.go('home');
   });
   $rootScope.$on('auth:session-expired', function() {
+    $state.go('clientLogin');
+  });
+  $rootScope.$on('auth:logout-success', function(ev) {
     $state.go('clientLogin');
   });
 }]);
@@ -245,6 +293,41 @@ bookmymove.service('mapService',['$rootScope', function($rootScope) {
 }]);
 
 //Controllers
+bookmymove.controller('adminsdemo',['$scope','$auth','$state','toastr',function($scope,$auth,$state,toastr){
+    $scope.adminReg = function() {
+      $auth.submitRegistration($scope.adminForm, {config: 'adminUser'})
+        .then(function(resp) { 
+          // handle success response
+        })
+        .catch(function(resp) { 
+          // handle error response
+        });
+    };
+
+    $scope.loginSubmit = function() {
+      $auth.submitLogin($scope.loginForm,{config: 'adminUser'})
+        .then(function(resp) { 
+          // handle success response
+          toastr.success('Login!', 'Toastr fun!');
+          $state.go('home.clients')
+          console.info('login success');
+        })
+        .catch(function(resp) { 
+          // handle error response
+        });
+    };
+
+    $scope.logout = function() {
+      $auth.signOut()
+        .then(function(resp) { 
+          $state.go('adminpanel')
+        })
+        .catch(function(resp) { 
+          // handle error response
+        });
+    };
+}]);
+
 bookmymove.controller('MapCtrl', ['$scope','mapService', function($scope,mapService){
   $scope.result2 = '';
   $scope.options2 = {
@@ -436,7 +519,6 @@ bookmymove.controller('clientLoginCtrl',['$scope','$auth',function($scope,$auth)
           // handle error response
         });
     };
-    console.info($auth.validateUser);
     $scope.logout = function() {
       $auth.signOut()
         .then(function(resp) { 

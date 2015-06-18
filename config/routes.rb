@@ -1,6 +1,14 @@
 Rails.application.routes.draw do
   mount_devise_token_auth_for 'Client', at: 'auth'
+
+  mount_devise_token_auth_for 'Admin', at: 'admin_auth'
+  as :admin do
+    # Define routes for Admin within this block.
+    get 'demo/members_only_admin', to: 'admin_user#members_only'
+  end
   root 'home#index'
+
+      
   resources :home
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

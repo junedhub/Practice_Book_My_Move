@@ -18,3 +18,4 @@
   asset 'angular-strap'
   asset 'ng-table'
   asset 'ng-token-auth'
+  asset 'angular-toastr'

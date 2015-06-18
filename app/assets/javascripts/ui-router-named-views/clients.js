@@ -7,7 +7,8 @@ angular.module('named-views.clients', [
         url: 'clients',
         views: {
           'header@': {
-            templateUrl: 'AdminHeader.html'
+            templateUrl: 'AdminHeader.html',
+            controller: 'adminsdemo'
           },
           'content@': {
             templateUrl: 'clients.html',

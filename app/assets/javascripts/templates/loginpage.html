@@ -16,13 +16,13 @@
   								<span class="input-group-addon" id="basic-addon1"><i class="fa fa-user"></i></span>
   								<input type="email" name="emailid" class="form-control" placeholder="Enter Username" aria-describedby="basic-addon1" ng-model="loginForm.email" ng-model-options="{debounce: 750}" validate-email required>
 							 </div>
-               <div style="color: #red;" ng-show="!LoginForm.emailid.$pristine" ng-messages="LoginForm.emailid.$error" ng-messages-include="my-messages.html">
+               <div style="color: #fff;" style="color: #red;" ng-show="!LoginForm.emailid.$pristine" ng-messages="LoginForm.emailid.$error" ng-messages-include="my-messages.html">
                   <div ng-message="email">Specify a valid email<i class="fa fa-exclamation-triangle fa-stack-1x"></i></div>
                 </div><br>
 							 <div class="input-group">
   								<span class="input-group-addon" id="basic-addon1"><i class="fa fa-lock"></i></span>
-  								<input type="password" required class="form-control" ng-model="loginForm.password"  ng-model-options="{debounce: 750}" placeholder="Enter Password" aria-describedby="basic-addon1">
-                  <div ng-show="!LoginForm.password.$pristine" ng-messages="LoginForm.password.$error" ng-model-options="{debounce: 750}" ng-messages-include="my-messages.html"></div>
+  								<input type="password" required class="form-control" ng-model="loginForm.password" name="password" ng-model-options="{debounce: 750}" placeholder="Enter Password" aria-describedby="basic-addon1"/>
+                  <div style="color: #fff;" ng-show="!LoginForm.password.$pristine" ng-messages="LoginForm.password.$error" ng-model-options="{debounce: 750}" ng-messages-include="my-messages.html"></div>
 							  </div><br>
                 <a Style="color:white;">Forget Password?</a>
 							  <section layout="row" class="create-btn">
@@ -35,5 +35,4 @@
 		</div> 
 	</div><!-- +End Of Background Div -->
 </div><!-- +End Of Main Div(row) -->
-<button class="btn btn-primary btn-lg" ng-click='signOut()'>Sign out</button>
 

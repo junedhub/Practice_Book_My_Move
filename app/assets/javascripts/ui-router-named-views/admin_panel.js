@@ -5,8 +5,7 @@ angular.module('named-views.adminPanel', [
     $stateProvider
       .state('home.adminPanel', {
         url: 'adminpanel',
-        views: {
-          
+        views: {          
           'content@': {
             templateUrl: 'loginpage.html'
           }

@@ -18,8 +18,6 @@
     "angular-strap": "latest",
     "ng-table": "latest",
     "ng-token-auth": "latest",
-    "picardy.fontawesome": "latest"
-  },
-  "resolutions": {
+    "angular-toastr": "latest"
   }
 }

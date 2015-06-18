@@ -29,5 +29,6 @@
 //= require ng-table/dist/ng-table
 //= require angular-cookie/angular-cookie
 //= require ng-token-auth/dist/ng-token-auth
+//= require angular-toastr/dist/angular-toastr
 //= require angular-recaptcha/release/angular-recaptcha
 //= require_tree .
